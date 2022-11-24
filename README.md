@@ -63,11 +63,19 @@ developing your own process.
 - Add a new toy when the toy form is submitted
 
   - How I debugged:
+  Checked the console for error, got a 500 internal server error. Meaning my routes were faulty.
+  Checked the rails server error, got a NameError for Toys
+  Changed to Toy.create!
 
 - Update the number of likes for a toy
 
   - How I debugged:
+  -Tried to add a like got the error from the console
+  "Uncaught (in promise) SyntaxError: Unexpected end of JSON input"
+  -Checked my controller, I wasn't sending back a json object on the update... edited to render JSON
 
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+  Console error "404 (Not Found)"
+  Meaning the route was faulty. Since the controller method was okay and not a server error, added the delete route to resources on routes.rb
